@@ -1,0 +1,22 @@
+#welcome {
+font-size: 84px;
+font-weight: 900;
+color:#ccc;
+}
+
+<!--================ADOBE SHADOW GENERATOR================-->
+<a class=elementTmp hidden></a>
+
+  				<p id=welcome class=shadowElement data-shadowtype="text" data-maxshadow="32" data-shadowcolor="rgb(21, 21, 21)">WELCOME</p>
+<!--================BY kougiland.com==================-->
+
+var shadowElement = $(".shadowElement"),elementTmp =$("a.elementTmp"); 
+shadowElement.each( function(){
+  var shadowType = $(this).data("shadowtype"),maxShadowIndex = $(this).data("maxshadow"),textShadowColor =$(this).data("shadowcolor");
+    elementTmp.empty().append(maxShadowIndex+'px '+maxShadowIndex+'px 0px '+textShadowColor);
+    for(i=(maxShadowIndex-1);i>0;i--){
+    elementTmp.append(','+i+'px '+i+'px 0px '+textShadowColor);
+    }
+    $(this).css(shadowType+'-shadow',elementTmp.html());
+    
+});
